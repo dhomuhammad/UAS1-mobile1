@@ -33,18 +33,19 @@ Berikut merupakan tutorial untuk menjalankan program aplikasi pada Android Studi
 **Fill in All The Code in This Project :**
 > 1. ***Gradle Script*** => `build.gradle.kts (Module :app)`
 ```
+
 plugins {
     id("com.android.application")
 }
 
 android {
-    namespace = "com.example.project244"
+    namespace = "com.example.uas1"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.project244"
-        minSdk = 24
-        targetSdk = 33
+        applicationId = "com.example.uas1"
+        minSdk = 29
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -66,7 +67,7 @@ android {
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -86,7 +87,7 @@ dependencies {
 => Pada `MainActivity.java` saya melakukan penambahan code, yaitu isi code keseluruhannya adalah :
 - `MainAcitivity.java`
 ```
-package com.example.project244;
+package com.example.uas1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Ketika tombolDua ditekan, lakukan aksi yang diinginkan
                 // Misalnya, pindah ke aktivitas lain atau jalankan fungsi khusus
-                Intent sianida = new Intent(MainActivity.this, com.example.project244.SianidaActivity.class);
+                Intent sianida = new Intent(MainActivity.this, com.example.uas1.SianidaActivity.class);
                 startActivity(sianida);
             }
         });
@@ -196,7 +197,8 @@ public class MainActivity extends AppCompatActivity {
 
 => `FragmentActivity.java`
 ```
-package com.example.project244;
+
+package com.example.uas1;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -294,7 +296,7 @@ public class FragmentActivity extends AppCompatActivity {
 
 - `ActionFragment.java` :
 ```
-package com.example.project244;
+package com.example.uas1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -323,32 +325,32 @@ public class ActionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_action, container, false);
 
         // Find the button by its ID
-        Button equalizerButton = view.findViewById(R.id.equalizer);
-        Button equalizer2Button = view.findViewById(R.id.equalizer2);
-        Button equalizer3Button = view.findViewById(R.id.equalizer3);
+        Button fastxButton = view.findViewById(R.id.fasx);
+        Button dragonballButton = view.findViewById(R.id.dragonball);
+        Button thebrickButton = view.findViewById(R.id.thebrick);
 
         // Set click listener for each button
-        equalizerButton.setOnClickListener(new View.OnClickListener() {
+        fastxButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviestheequalizer button clicked");
-                playVideo(R.raw.moviestheequalizer);
+                playVideo(R.raw.fastx);
             }
         });
 
-        equalizer2Button.setOnClickListener(new View.OnClickListener() {
+        dragonballButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviestheequalizer2 button clicked");
-                playVideo(R.raw.moviestheequalizer2);
+                playVideo(R.raw.dragonballz);
             }
         });
 
-        equalizer3Button.setOnClickListener(new View.OnClickListener() {
+        thebrickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviestheequalizer3 button clicked");
-                playVideo(R.raw.moviestheequalizer3);
+                playVideo(R.raw.thebricklayer);
             }
         });
 
@@ -380,7 +382,7 @@ public class ActionFragment extends Fragment {
 
 - `RomanceFragment.java` :
 ```
-package com.example.project244;
+package com.example.uas1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -409,32 +411,32 @@ public class RomanceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_romance, container, false);
 
         // Find the button by its ID
-        Button catatansiboyButton = view.findViewById(R.id.catatansiboy);
-        Button insyaallahsah2Button = view.findViewById(R.id.insyaallahsah2);
-        Button ainun3Button = view.findViewById(R.id.ainun3);
+        Button ancikaButton = view.findViewById(R.id.ancika);
+        Button suamiButton = view.findViewById(R.id.suami);
+        Button beautifulButton = view.findViewById(R.id.beautiful);
 
         // Set click listener for each button
-        catatansiboyButton.setOnClickListener(new View.OnClickListener() {
+        ancikaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviescatatansiboy button clicked");
-                playVideo(R.raw.moviescatatansiboy);
+                playVideo(R.raw.ancika);
             }
         });
 
-        insyaallahsah2Button.setOnClickListener(new View.OnClickListener() {
+        suamiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviesinsyaallahsah2 button clicked");
-                playVideo(R.raw.moviesinsyaallahsah2);
+                playVideo(R.raw.suamiyanglain);
             }
         });
 
-        ainun3Button.setOnClickListener(new View.OnClickListener() {
+        beautifulButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "movieshabibieainun3 button clicked");
-                playVideo(R.raw.movieshabibieainun3);
+                playVideo(R.raw.beautifulwedding);
             }
         });
 
@@ -466,7 +468,7 @@ public class RomanceFragment extends Fragment {
 
 - `HororFragment.java` :
 ```
-package com.example.project244;
+package com.example.uas1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -495,32 +497,32 @@ public class HororFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_horor, container, false);
 
         // Find the button by its ID
-        Button insidiousButton = view.findViewById(R.id.insidious);
-        Button insidious2Button = view.findViewById(R.id.insidious2);
-        Button insidious3Button = view.findViewById(R.id.insidious3);
+        Button keretaButton = view.findViewById(R.id.kereta);
+        Button munkarButton = view.findViewById(R.id.munkar);
+        Button setanButton = view.findViewById(R.id.setan);
 
         // Set click listener for each button
-        insidiousButton.setOnClickListener(new View.OnClickListener() {
+        keretaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviesinsidious button clicked");
-                playVideo(R.raw.moviesinsidious);
+                playVideo(R.raw.keretaberdarah);
             }
         });
 
-        insidious2Button.setOnClickListener(new View.OnClickListener() {
+        munkarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviesinsidious2 button clicked");
-                playVideo(R.raw.moviesinsidiousthelastkey);
+                playVideo(R.raw.munkar);
             }
         });
 
-        insidious3Button.setOnClickListener(new View.OnClickListener() {
+        setanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "moviesinsidious3 button clicked");
-                playVideo(R.raw.moviesinsidiousthereddoor);
+                playVideo(R.raw.pemukimansetan);
             }
         });
 
@@ -553,7 +555,7 @@ public class HororFragment extends Fragment {
 
 => Lalu buat java class dengan nama `ViewAdapter.java`, yang berisi code :
 ```
-package com.example.project244;
+package com.example.uas1;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -589,7 +591,7 @@ public class ViewAdapter extends FragmentStateAdapter {
 
 => Setelah itu membuat java class untuk memutar video dengan nama `VideoPlayerActivity.java`, yang berisi code :
 ```
-package com.example.project244;
+package com.example.uas1;
 
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
@@ -784,12 +786,12 @@ public class VideoPlayerActivity extends AppCompatActivity {
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/bgop</item>
+        <item name="android:windowBackground">@drawable/wp4</item>
         <item name="android:statusBarColor">@color/soft</item>
     </style>
 
-     <!-- Base application theme. -->
-    <style name="Base.Theme.Project244." parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.UAS1." parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/purple</item>
@@ -804,7 +806,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
         <!-- Customize your light theme here. -->
     </style>
 
-    <style name="Theme.TabExperiment" parent="Base.Theme.Project244." />
+    <style name="Theme.TabExperiment" parent="Base.Theme.UAS1" />
 </resources>
 ```
 
@@ -823,7 +825,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
-    tools:context="com.example.project244.MainActivity">
+    tools:context="com.example.uas1.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -912,7 +914,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/fibo" />
+                        android:src="@drawable/mtk" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -986,7 +988,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/twoact" />
+                        android:src="@drawable/pesan" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -1097,7 +1099,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/movies" />
+                        android:src="@drawable/movie" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -1158,7 +1160,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:fontFamily="monospace"
-            android:text="© 244 Alfaza"
+            android:text="© robbi"
             android:textColor="@color/black"
             android:textSize="23sp"
             android:textStyle="bold" />
@@ -1178,7 +1180,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.example.project244.FragmentActivity">
+    tools:context="com.example.uas1.FragmentActivity">
 
 
     <com.google.android.material.tabs.TabLayout
@@ -1239,638 +1241,402 @@ public class VideoPlayerActivity extends AppCompatActivity {
 - `fragment_action.xml` :
 ```
 <?xml version="1.0" encoding="utf-8"?>
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:padding="12dp"
-            tools:context="com.example.project244.ActionFragment">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25dp">
 
-            <ScrollView
-                android:layout_width="500dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bglightabu">
+    <ImageView
+        android:id="@+id/imgMovie"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/pfastx"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="FAST X"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cdMenu1"
-                        android:layout_width="320dp"
-                        android:layout_height="220dp"
-                        android:layout_row="0"
-                        android:layout_rowWeight="1"
-                        android:layout_column="0"
-                        android:layout_columnWeight="1"
-                        android:layout_gravity="fill"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp">
-
-
-                        <ImageView
-                            android:id="@+id/imgMovie"
-                            android:layout_width="143dp"
-                            android:layout_height="207dp"
-                            android:layout_gravity="left"
-                            android:layout_marginTop="6dp"
-                            android:src="@drawable/filmaction1" />
-
-                        <TextView
-                            android:id="@+id/tvTitle"
-                            android:layout_width="168dp"
-                            android:layout_height="108dp"
-                            android:layout_gravity="right"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginLeft="50dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_toRightOf="@id/imgMovie"
-                            android:text="THE EQUALIZER"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/Deskription"
-                            android:layout_width="172dp"
-                            android:layout_height="131dp"
-                            android:layout_below="@id/tvTitle"
-                            android:layout_gravity="right"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="35dp"
-                            android:layout_toRightOf="@id/imgMovie"
-                            android:maxLines="11"
-                            android:text="McCall, menyerah pada kehidupan kekerasan, Ia ingin menjalani hidup tenang dan tidak terganggu. Namun, peristiwa brutal memaksa dia untuk sekali lagi berjuang demi keadilan."
-                            android:textColor="@color/black" />
-
-                        <Button
-                            android:id="@+id/equalizer"
-                            android:layout_width="176dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/Deskription"
-                            android:layout_gravity="bottom|right"
-                            android:layout_marginStart="9dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_toRightOf="@id/imgMovie"
-                            android:onClick="playTheEqualizerTrailer"
-                            android:text="Watch Trailer Now" />
-                    </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdMenu2"
-            android:layout_width="320dp"
-            android:layout_height="220dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp">
-
-            <TextView
-                android:id="@+id/tvTitle2"
-                android:layout_width="172dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/imgMovie2"
-                android:text="THE EQUALIZER 2"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Deskription2"
-                android:layout_width="173dp"
-                android:layout_height="177dp"
-                android:layout_below="@id/tvTitle"
-                android:layout_gravity="right"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="35dp"
-                android:layout_toRightOf="@id/imgMovie2"
-                android:maxLines="11"
-                android:text="McCall Kini ia mencari tahu siapa yang telah membunuh temannya itu untuk membalaskan dendam."
-                android:textColor="@color/black" />
-
-            <ImageView
-                android:id="@+id/imgMovie2"
-                android:layout_width="142dp"
-                android:layout_height="205dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/filmaction2" />
+    <TextView
+        android:id="@+id/Deskription"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="menceritakan bahaya baru yang kini mengancam Dom beserta keluarganya. Musuh kali ini menjadi buntut dari kekalahan Hernan Reyes, seorang gembong narkoba yang berhasil ditaklukkan Dom dan kelompoknya pada seri kelima yang berjudul Fast Five (2011)." />
 
     <Button
-        android:id="@+id/equalizer2"
-        android:layout_width="175dp"
+        android:id="@+id/fasx"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
         android:layout_marginStart="9dp"
         android:layout_marginTop="2dp"
-        android:layout_toRightOf="@id/imgMovie2"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription"
+        android:text="TONTON TRAILER"
+        android:onClick="playFastXTrailer"/>
+
+    <ImageView
+        android:id="@+id/imgMovie2"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/pdragonball"/>
+
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="DRAGON BALLZ"/>
+
+    <TextView
+        android:id="@+id/Deskription2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="210dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Dragon Ball is a Japanese media franchise created by Akira Toriyama in 1984. Since 1986, there have been 24 theatrical films based on the franchise, including 21 anime films produced by Toei Animation, one official live-action film, and two unofficial films." />
+    <Button
+        android:id="@+id/dragonball"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
         android:layout_below="@id/Deskription2"
-        android:text="Watch Trailer Now"
-        android:onClick="playTheEqualizer2Trailer"/>
+        android:text="TONTON TRAILER"
+        android:onClick="playDragonBallTrailer"/>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdMenu3"
-            android:layout_width="320dp"
-            android:layout_height="220dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp">
+    <ImageView
+        android:id="@+id/imgMovie3"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/pthebrick" />
 
+    <TextView
+        android:id="@+id/tvTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="400dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="THE BRICK LAYER"/>
 
-            <ImageView
-                android:id="@+id/imgMovie3"
-                android:layout_width="138dp"
-                android:layout_height="209dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/filmaction3" />
-
-            <TextView
-                android:id="@+id/tvTitle3"
-                android:layout_width="172dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/imgMovie3"
-                android:text="THE EQUALIZER 3"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Deskription3"
-                android:layout_width="177dp"
-                android:layout_height="178dp"
-                android:layout_below="@id/tvTitle"
-                android:layout_gravity="right"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="35dp"
-                android:layout_toRightOf="@id/imgMovie3"
-                android:maxLines="11"
-                android:text="Robert McCall (Denzel Washington) kembali beraksi, kali ini ia akan menghadapi mafia sadis yang mengganggu teman-temannya di Italia."
-                android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/Deskription3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="410dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="After retiring from the Central Intelligence Agency, Steve Vail had been enjoying a peaceful life. He had dedicated years of service to his country, putting his life on the line, and was now looking forward to spending quality time with his family." />
 
     <Button
-        android:id="@+id/equalizer3"
-        android:layout_width="182dp"
+        android:id="@+id/thebrick"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_below="@id/Deskription3"
         android:layout_marginStart="9dp"
         android:layout_marginTop="2dp"
-        android:layout_toRightOf="@id/imgMovie3"
-        android:onClick="playTheEqualizer3Trailer"
-        android:text="Watch Trailer Now" />
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-    </ScrollView>
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription3"
+        android:text="TONTON TRAILER"
+        android:onClick="playTheBrickTrailer"/>
 </RelativeLayout>
 ```
 
 - `fragment_horor.xml`
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:padding="12dp"
-    tools:context="com.example.project244.HororFragment">
+    android:padding="25dp">
 
-    <ScrollView
-        android:layout_width="500dp"
+    <ImageView
+        android:id="@+id/imgMovie"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/pkeretaberdarah"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bglightabu">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="KERETA BERDARAH"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/Deskription"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Teror berdarah menghilangkan satu per satu gerbong Kereta Sangkara, menempatkan para penumpang mempertaruhkan hidup dan mati," />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdMenu1"
-                android:layout_width="320dp"
-                android:layout_height="220dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp">
+    <Button
+        android:id="@+id/kereta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription"
+        android:text="TONTON TRAILER"
+        android:onClick="playKeretaTrailer"/>
 
+    <ImageView
+        android:id="@+id/imgMovie2"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/pmunkar"/>
 
-                <ImageView
-                    android:id="@+id/imgMovie"
-                    android:layout_width="143dp"
-                    android:layout_height="207dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="6dp"
-                    android:src="@drawable/filmhorror1"/>
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="MUNKAR"/>
 
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="168dp"
-                    android:layout_height="108dp"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/imgMovie"
-                    android:text="INSIDIOUS "
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+    <TextView
+        android:id="@+id/Deskription2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="210dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="kehidupan sosok santriwati bernama Herlina yang menjadi korban bully teman-temannya. Namun alih-alih takut ataupun kesal, Herlina justru tertawa usai mendapat perundungan. Pada suatu hari, Herlina tertangkap mencuri cincin berharga milik istri Kyai." />
+    <Button
+        android:id="@+id/munkar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription2"
+        android:text="TONTON TRAILER"
+        android:onClick="playMunkarTrailer"/>
 
-                <TextView
-                    android:id="@+id/Deskription"
-                    android:layout_width="172dp"
-                    android:layout_height="131dp"
-                    android:layout_below="@id/tvTitle"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_toRightOf="@id/imgMovie"
-                    android:maxLines="11"
-                    android:text="Josh dan dan Renai Lambert pindah ke sebuah mansion baru bersama ke-tiga anak mereka di mana dia bertemu dengan entitas misterius. Keesokan harinya, dia mengalami koma."
-                    android:textColor="@color/black" />
+    <ImageView
+        android:id="@+id/imgMovie3"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/ppemukimansetan" />
 
-                <Button
-                    android:id="@+id/insidious"
-                    android:layout_width="176dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/Deskription"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/imgMovie"
-                    android:onClick="playInsidiousTrailer"
-                    android:text="Watch Trailer Now" />
-            </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="400dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="PEMUKIMAN SETAN"/>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdMenu2"
-                android:layout_width="320dp"
-                android:layout_height="220dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp">
+    <TextView
+        android:id="@+id/Deskription3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="410dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="kisah Alin sebagai korban trauma kekerasan keluarga dan kesulitan ekonomi. Karena keadaan ekonomi yang mendesak, Alin memutuskan bergabung dengan tiga temannya untuk merampok sebuah rumah." />
 
-                <TextView
-                    android:id="@+id/tvTitle2"
-                    android:layout_width="171dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/imgMovie2"
-                    android:text="THE LAST KEY"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/Deskription2"
-                    android:layout_width="173dp"
-                    android:layout_height="177dp"
-                    android:layout_below="@id/tvTitle"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_toRightOf="@id/imgMovie2"
-                    android:maxLines="11"
-                    android:text="Chapter 3 kini berurusan kembali dengan kegelapan dan iblis jahat.  pulang ke kampung halamannya untuk menyelidiki gangguan supranatural dirumah yang ditempati Elise saat muda dulu."
-                    android:textColor="@color/black" />
-
-                <ImageView
-                    android:id="@+id/imgMovie2"
-                    android:layout_width="142dp"
-                    android:layout_height="205dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="4dp"
-                    android:src="@drawable/filmhorror2" />
-
-                <Button
-                    android:id="@+id/insidious2"
-                    android:layout_width="175dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/imgMovie2"
-                    android:layout_below="@id/Deskription2"
-                    android:text="Watch Trailer Now"
-                    android:onClick="playInsidious2Trailer"/>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdMenu3"
-                android:layout_width="320dp"
-                android:layout_height="220dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp">
-
-                <ImageView
-                    android:id="@+id/imgMovie3"
-                    android:layout_width="138dp"
-                    android:layout_height="209dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="6dp"
-                    android:src="@drawable/filmhorror3" />
-
-                <TextView
-                    android:id="@+id/tvTitle3"
-                    android:layout_width="169dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/imgMovie3"
-                    android:text="THE RED DOOR"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/Deskription3"
-                    android:layout_width="177dp"
-                    android:layout_height="178dp"
-                    android:layout_below="@id/tvTitle"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_toRightOf="@id/imgMovie3"
-                    android:maxLines="11"
-                    android:text="Josh (Patrick Wilson), Renai (Rose Byrne) dan anaknya yang sudah dewasa, Dalton (Ty Simpkins) mencari tahu kenapa keluarga mereka kembali dianggu oleh sosok arwah."
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:id="@+id/insidious3"
-                    android:layout_width="182dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|bottom"
-                    android:layout_below="@id/Deskription3"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/imgMovie3"
-                    android:onClick="playInsidious3Trailer"
-                    android:text="Watch Trailer Now" />
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/setan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription3"
+        android:text="TONTON TRAILER"
+        android:onClick="playSetanTrailer"/>
 </RelativeLayout>
 ```
 
 - `fragment_romance.xml`
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:padding="12dp"
-    tools:context="com.example.project244.RomanceFragment">
+    android:padding="25dp">
 
-    <ScrollView
-        android:layout_width="500dp"
+    <ImageView
+        android:id="@+id/imgMovie"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/pancika"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bglightabu">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="ANCIKA"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/Deskription"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Pada tahun 1995, mantan ketua geng motor DILAN, jatuh cinta pada ANCIKA, gadis yang membenci geng motor. Tak hanya itu, Ancika menentang segala bentuk hubungan pacaran dan tanpa terkecuali, ia membenci Dilan." />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdMenu1"
-                android:layout_width="320dp"
-                android:layout_height="220dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp">
+    <Button
+        android:id="@+id/ancika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription"
+        android:text="TONTON TRAILER"
+        android:onClick="playAncikaTrailer"/>
 
+    <ImageView
+        android:id="@+id/imgMovie2"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="200dp"
+        android:src="@drawable/psuaminyanglain"/>
 
-                <ImageView
-                    android:id="@+id/imgMovie"
-                    android:layout_width="143dp"
-                    android:layout_height="207dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="6dp"
-                    android:src="@drawable/filmromance1" />
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="SUAMI YANG LAIN"/>
 
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="168dp"
-                    android:layout_height="108dp"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/imgMovie"
-                    android:text="CATATAN SI BOY"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+    <TextView
+        android:id="@+id/Deskription2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="210dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Gani meminta bantuan Raka untuk bisa lolos dari baku tembak. Rakapun setuju akan membantu dengan mengajukan syarat Gani harus bernazar akan bertaubat. " />
+    <Button
+        android:id="@+id/suami"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription2"
+        android:text="TONTON TRAILER"
+        android:onClick="playSuamiTrailer"/>
 
-                <TextView
-                    android:id="@+id/Deskription"
-                    android:layout_width="172dp"
-                    android:layout_height="131dp"
-                    android:layout_below="@id/tvTitle"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_toRightOf="@id/imgMovie"
-                    android:maxLines="11"
-                    android:text="BOY, seorang mahasiswa sempurna: tampan, kaya, menyenangkan, dan lembut hatinya. Tak heran jika banyak mahasiswi yang ingin Boy menjadi pacarnya."
-                    android:textColor="@color/black" />
+    <ImageView
+        android:id="@+id/imgMovie3"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/pbeautifulwedding" />
 
-                <Button
-                    android:id="@+id/catatansiboy"
-                    android:layout_width="176dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/Deskription"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/imgMovie"
-                    android:onClick="playCatatanSiBoyTrailer"
-                    android:text="Watch Trailer Now" />
-            </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="400dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="BEAUTIFUL WEDDING"/>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdMenu2"
-                android:layout_width="320dp"
-                android:layout_height="220dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp">
+    <TextView
+        android:id="@+id/Deskription3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="410dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        android:text="Habibie lewat Thareq menginginkan suasana bahagia ketika makan malam. Habibie atas keinginan cucu-cucunya menceritakan Eyang Putri, panggilan Hasri Ainun Besari." />
 
-                <TextView
-                    android:id="@+id/tvTitle2"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/imgMovie2"
-                    android:text="INSYA ALLAH SAH 2"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/Deskription2"
-                    android:layout_width="173dp"
-                    android:layout_height="177dp"
-                    android:layout_below="@id/tvTitle"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_toRightOf="@id/imgMovie2"
-                    android:maxLines="11"
-                    android:text="Gani meminta bantuan Raka untuk bisa lolos dari baku tembak. Rakapun setuju akan membantu dengan mengajukan syarat Gani harus bernazar akan bertaubat."
-                    android:textColor="@color/black" />
-
-                <ImageView
-                    android:id="@+id/imgMovie2"
-                    android:layout_width="142dp"
-                    android:layout_height="205dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="4dp"
-                    android:src="@drawable/filmromance2" />
-
-                <Button
-                    android:id="@+id/insyaallahsah2"
-                    android:layout_width="175dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/imgMovie2"
-                    android:layout_below="@id/Deskription2"
-                    android:text="Watch Trailer Now"
-                    android:onClick="playInsyaAllahSah2Trailer"/>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cdMenu3"
-                android:layout_width="320dp"
-                android:layout_height="220dp"
-                android:layout_row="0"
-                android:layout_rowWeight="1"
-                android:layout_column="0"
-                android:layout_columnWeight="1"
-                android:layout_gravity="fill"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp">
-
-
-                <ImageView
-                    android:id="@+id/imgMovie3"
-                    android:layout_width="138dp"
-                    android:layout_height="209dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="6dp"
-                    android:src="@drawable/filmromance3" />
-
-                <TextView
-                    android:id="@+id/tvTitle3"
-                    android:layout_width="172dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@id/imgMovie3"
-                    android:text="HABIBIE AINUN 3"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/Deskription3"
-                    android:layout_width="177dp"
-                    android:layout_height="178dp"
-                    android:layout_below="@id/tvTitle"
-                    android:layout_gravity="right"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_toRightOf="@id/imgMovie3"
-                    android:maxLines="11"
-                    android:text="Habibie lewat Thareq menginginkan suasana bahagia ketika makan malam. Habibie atas keinginan cucu-cucunya menceritakan Eyang Putri, panggilan Hasri Ainun Besari."
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:id="@+id/ainun3"
-                    android:layout_width="182dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|bottom"
-                    android:layout_below="@id/Deskription3"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/imgMovie3"
-                    android:onClick="playHabibieAinun3Trailer"
-                    android:text="Watch Trailer Now" />
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/beautiful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:layout_below="@id/Deskription3"
+        android:text="TONTON TRAILER"
+        android:onClick="playBeautifulTrailer"/>
 </RelativeLayout>
 ```
 => Pada directory `drawable` kita bisa tambahkan gambar seperti poster film yang ingin kita tampilkan, dan jangan lupa untuk menambahkan icon `baseline_more_vert_24.xml` dengan cara klik kanan pada `drawable` lalu klik New, setelah itu kita pilih dan klik Vector Asset. Setelah itu kita klik clip art lalu kita pilih icon nya, jika sudah ketemu kita klik OK lalu kita klik next. Sama halnya ketika kita ingin menambahkan menu kembali pada halaman `VideoPlayerActivity` yaitu dengan langkah-langkah yang sama seperti sebelumnya dan jangan lupa untuk menambahkan icon `baseline_arrorw_circle_left_24.xml` lalu klik OK dan kita klik next.
@@ -1888,15 +1654,15 @@ public class VideoPlayerActivity extends AppCompatActivity {
         android:text="ic_launcher.webp&#xA;ic_launcher.webp&#xA;ic_launcher.webp&#xA;ic_launcher.webp&#xA;ic_launcher.xml&#xA;ic_launcher.webp" />
     <item
         android:id="@+id/tab_action"
-        android:icon="@drawable/logo244"
+        android:icon="@drawable/icon"
         android:title="Action"/>
     <item
         android:id="@+id/tab_horor"
-        android:icon="@drawable/logo244"
+        android:icon="@drawable/icon"
         android:title="Horor"/>
     <item
         android:id="@+id/tab_romance"
-        android:icon="@drawable/logo244"
+        android:icon="@drawable/icon"
         android:title="Romance"/>
 </menu>
 ```
@@ -1908,7 +1674,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_back"
-        android:icon="@drawable/logo244"
+        android:icon="@drawable/icon"
         android:title="Back"
         app:showAsAction="always" />
 </menu>
@@ -1916,12 +1682,12 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
 > **Hasil Tampilan Menu Program Tugas Akhir :**
 
-![SS Tampilan Menu Program](https://github.com/alfaza-putra/PROJECT-UASPM1/assets/129705943/9e5a6daa-0896-42f6-a15e-11d08a58240a)
+![SS Tampilan Menu Program]()
 
 
 
 ##  Hasil Run
 
-https://github.com/alfaza-putra/PROJECT-UASPM1/assets/129705943/531aa2f9-a700-4252-b8ed-4aa814d2b557
 
-## Semoga Bermanfaat, Terima Kasih 
+
+##  Terima Kasih 
