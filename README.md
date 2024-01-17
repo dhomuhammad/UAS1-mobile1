@@ -1689,5 +1689,9 @@ public class VideoPlayerActivity extends AppCompatActivity {
 ##  Hasil Run
 
 
+https://github.com/IDOYGAMING/UAS1-mobile1/assets/130027527/3c13f1a4-ba63-4df8-9e8c-f115538810d0
+
+
+
 
 ##  Terima Kasih 
